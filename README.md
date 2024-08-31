@@ -1,75 +1,21 @@
-# Nuxt 3 Minimal Starter
+# Ollama-Nuxt
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Experimento onde testei o recurso Composer do Cursor AI, desenvolvedo um chat de IA local com Ollama e Nuxt, **sem programar nada!**
+Utilizei apenas comandos em escrita natural para o Cursor AI (Claude 3.5 Sonnet) realizar as tarefas.
 
-## Setup
+## Vídeo de Demonstração
 
-Make sure to install the dependencies:
+Gravei um vídeo que documenta todo o processo de desenvolvimento, onde você pode ver como a aplicação foi criada e as interações que tive com o Cursor AI. Você pode assistir ao vídeo abaixo:
 
-```bash
-# npm
-npm install
+[![Assista o vídeo](https://img.youtube.com/vi/iQ_iIqsa7Yk/maxresdefault.jpg)](https://www.youtube.com/watch?v=iQ_iIqsa7Yk)
 
-# pnpm
-pnpm install
+## Como Funciona
 
-# yarn
-yarn install
+O projeto utiliza o recurso Composer do Cursor AI para gerar código e funcionalidades. Através de uma série de comandos e perguntas, o AI foi capaz de criar uma aplicação funcional, demonstrando o potencial da inteligência artificial na programação.
 
-# bun
-bun install
-```
+## Contribuições
 
-## Development Server
+Sinta-se à vontade para explorar o projeto, fazer perguntas ou contribuir com melhorias. Estou aberto a sugestões e feedbacks!
 
-Start the development server on `http://localhost:3000`:
 
-```bash
-# npm
-npm run dev
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
