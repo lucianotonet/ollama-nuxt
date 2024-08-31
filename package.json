@@ -2,15 +2,42 @@
   "name": "nuxt-app",
   "private": true,
   "type": "module",
+  "main": "electron/main.cjs",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "electron": "cross-env NODE_ENV=development electron .",
+    "electron:build": "electron-builder"
   },
   "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@pinia/nuxt": "^0.5.4",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.6.0",
     "nuxt": "^3.13.0",
+    "pinia": "^2.1.0",
+    "postcss": "^8.4.41",
     "vue": "latest"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^32.0.1",
+    "electron-builder": "^24.6.0",
+    "electron-serve": "^1.1.0",
+    "tailwindcss": "^3.4.10"
+  },
+  "build": {
+    "appId": "com.seuapp.chatgpt",
+    "productName": "ChatGPT Local",
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    }
   }
 }
