@@ -17,6 +17,7 @@
     "@pinia/nuxt": "^0.5.4",
     "autoprefixer": "^10.4.20",
     "axios": "^1.6.0",
+    "cors": "^2.8.5",
     "nuxt": "^3.13.0",
     "pinia": "^2.1.0",
     "postcss": "^8.4.41",

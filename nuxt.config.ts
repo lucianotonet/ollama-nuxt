@@ -4,7 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    routeRules: {
+      '/api/**': { proxy: 'http://127.0.0.1:11434/api/**', cors: true },
+    }
   },
   modules: [
     '@pinia/nuxt',

@@ -9,11 +9,14 @@ export const useChatStore = defineStore('chat', {
     models: [],
     selectedModel: '',
     currentStreamingMessage: null,
+    baseUrl: '',
   }),
   actions: {
     async fetchModels() {
       try {
-        const response = await axios.get('http://localhost:11434/api/tags')
+        // ...
+
+        const response = await axios.get(`${this.baseUrl}/api/tags`)
         this.models = response.data.models.map(model => ({
           name: model.name,
           displayName: `${model.name} (${model.details.parameter_size})`,
@@ -33,7 +36,7 @@ export const useChatStore = defineStore('chat', {
       this.messages.push(userMessage)
 
       try {
-        const response = await axios.post('http://localhost:11434/api/chat', {
+        const response = await axios.post(`${this.baseUrl}/api/chat`, {
           model: this.selectedModel,
           messages: this.messages.map(msg => ({ role: msg.role, content: msg.content })),
           stream: false
@@ -64,7 +67,7 @@ export const useChatStore = defineStore('chat', {
       this.messages.push(userMessage)
 
       try {
-        const response = await fetch('http://localhost:11434/api/chat', {
+        const response = await fetch(`${this.baseUrl}/api/chat`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
