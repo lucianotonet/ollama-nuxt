@@ -16,7 +16,7 @@ export const useChatStore = defineStore('chat', {
       try {
         // ...
 
-        const response = await axios.get(`${this.baseUrl}/api/tags`)
+        const response = await axios.get(`http://127.0.0.1:11434/api/tags`)
         this.models = response.data.models.map(model => ({
           name: model.name,
           displayName: `${model.name} (${model.details.parameter_size})`,
@@ -36,7 +36,7 @@ export const useChatStore = defineStore('chat', {
       this.messages.push(userMessage)
 
       try {
-        const response = await axios.post(`${this.baseUrl}/api/chat`, {
+        const response = await axios.post(`http://127.0.0.1:11434/api/chat`, {
           model: this.selectedModel,
           messages: this.messages.map(msg => ({ role: msg.role, content: msg.content })),
           stream: false
@@ -67,7 +67,7 @@ export const useChatStore = defineStore('chat', {
       this.messages.push(userMessage)
 
       try {
-        const response = await fetch(`${this.baseUrl}/api/chat`, {
+        const response = await fetch(`http://127.0.0.1:11434/api/chat`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
